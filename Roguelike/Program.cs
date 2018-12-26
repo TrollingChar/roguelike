@@ -1,7 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-
-
-namespace Roguelike {
+﻿namespace Roguelike {
 
     public class Program {
 
@@ -13,16 +10,5 @@ namespace Roguelike {
 
     }
 
-
-    public class Game : Microsoft.Xna.Framework.Game {
-
-        private GraphicsDeviceManager _graphicsDevice;
-
-
-        public Game () {
-            _graphicsDevice = new GraphicsDeviceManager(this);
-        }
-
-    }
 
 }
