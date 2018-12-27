@@ -39,7 +39,9 @@ namespace Roguelike {
             GraphicsDevice.Clear (Color.Black);
             // draw game
             _spriteBatch.Begin ();
-            _spriteBatch.Print ("Hello world!", 1, 1, Color.Lime);
+            var filler = new Char('a', Color.Aqua, Color.Gray);
+            var charMatrix = new CharMatrix(80, 60, filler);           
+            _spriteBatch.Print (charMatrix.ConvertToString(), 1, 1, Color.Lime);
             _spriteBatch.End ();
             base.Draw (gameTime);
         }

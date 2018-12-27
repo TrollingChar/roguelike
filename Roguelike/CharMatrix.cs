@@ -20,6 +20,22 @@ namespace Roguelike {
             }
         }
 
+        public string ConvertToString()
+        {
+            string s = "";
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    s += _chars[j, i].Character;
+                }
+
+                s += "\n";
+            }
+
+            return s;
+        }
+
     }
 
 }
