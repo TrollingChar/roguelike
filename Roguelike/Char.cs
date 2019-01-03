@@ -9,13 +9,13 @@ namespace Roguelike {
         public Color Foreground;
         public Color Background;
 
-        public Char(char c, Color f, Color b)
-        {
-            Character = c;
-            Foreground = f;
-            Background = b;
+
+        public Char (char c, Color fg, Color bg) {
+            Character  = c;
+            Foreground = fg;
+            Background = bg;
         }
-        
+
     }
 
 }

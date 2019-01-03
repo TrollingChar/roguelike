@@ -7,7 +7,8 @@ namespace Roguelike {
     public class Game : Microsoft.Xna.Framework.Game {
 
         private GraphicsDeviceManager _graphicsDevice;
-        private SpriteBatch _spriteBatch;
+        private SpriteBatch           _spriteBatch;
+        private CharMatrix            _matrix;
 
 
         public Game () {
@@ -18,14 +19,23 @@ namespace Roguelike {
         }
 
 
-        protected override void Initialize () {
-            base.Initialize ();
-            _spriteBatch = new SpriteBatch (GraphicsDevice);
+        protected override void LoadContent () {
+            _.Assets = new Assets (Content);
+
+            _.Assets.WhitePixel = new Texture2D (GraphicsDevice, 1, 1);
+            _.Assets.WhitePixel.SetData (new [] {Color.White});
         }
 
 
-        protected override void LoadContent () {
-            _.Assets = new Assets (Content);
+        protected override void Initialize () {
+            base.Initialize ();
+            _spriteBatch = new SpriteBatch (GraphicsDevice);
+
+            IsMouseVisible = true;
+
+            _matrix = new CharMatrix (80, 60);
+            _matrix.Print (1, 1, "[F1] Help", Color.White, Color.Black);
+            _matrix.Print (1, 3, "[F2] Play", Color.White, Color.Black);
         }
 
 
@@ -39,9 +49,7 @@ namespace Roguelike {
             GraphicsDevice.Clear (Color.Black);
             // draw game
             _spriteBatch.Begin ();
-            var filler = new Char('a', Color.Aqua, Color.Gray);
-            var charMatrix = new CharMatrix(80, 60, filler);           
-            _spriteBatch.Print (charMatrix.ConvertToString(), 1, 1, Color.Lime);
+            _spriteBatch.Print (_matrix);
             _spriteBatch.End ();
             base.Draw (gameTime);
         }
