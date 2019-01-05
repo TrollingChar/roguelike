@@ -35,6 +35,20 @@ namespace Roguelike {
         }
 
 
+        public void Print (int x, int y, Char ch, int w, int h) {
+            int sx  = Math.Max (0, x);
+            int ex  = Math.Min (W, x + w);
+
+            int sy  = Math.Max (0, y);
+            int ey  = Math.Min (H, y + h);
+
+            for (int ix = sx; ix < ex; ix++)
+            for (int iy = sy; iy < ey; iy++) {
+                _chars [ix, iy] = ch;
+            }
+        }
+
+
         public void Print (int x, int y, string s, Color fg, Color bg) {
             if (y < 0 || y >= H) return;
 

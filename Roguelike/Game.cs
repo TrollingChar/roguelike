@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
@@ -33,14 +34,18 @@ namespace Roguelike {
 
             IsMouseVisible = true;
 
-            _matrix = new CharMatrix (80, 60);
-            _matrix.Print (1, 1, "[F1] Help", Color.White, Color.Black);
-            _matrix.Print (1, 3, "[F2] Play", Color.White, Color.Black);
+            _.Time = 0;
+            _.Input = new Input ();
+
+            _matrix = new CharMatrix (80, 60, new Char ((char) 176, Color.Gray, Color.Black));
+//            _matrix.Print (1, 1, "[F1] Help", Color.White, Color.Black);
+//            _matrix.Print (1, 3, "[F2] Play", Color.White, Color.Black);
         }
 
 
         protected override void Update (GameTime gameTime) {
-            // update game
+            _matrix = new CharMatrix (80, 60, new Char ((char) 176, Color.Gray, Color.Black));
+            
             base.Update (gameTime);
         }
 
