@@ -1,6 +1,3 @@
-using Microsoft.Xna.Framework;
-
-
 namespace Roguelike {
 
     public struct Char {
