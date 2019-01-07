@@ -49,13 +49,14 @@
     <Compile Include="Assets.cs" />
     <Compile Include="Chars\Char.cs" />
     <Compile Include="Chars\CharMatrix.cs" />
-    <Compile Include="Color.cs" />
+    <Compile Include="Chars\Color.cs" />
     <Compile Include="ColorExtension.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpriteBatchExtension.cs" />
+    <Compile Include="UI\Element.cs" />
     <Compile Include="UI\UiEvent.cs" />
     <Compile Include="UI\Window.cs" />
     <Compile Include="_.cs" />

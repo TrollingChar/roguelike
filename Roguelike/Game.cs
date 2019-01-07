@@ -39,14 +39,17 @@ namespace Roguelike {
             _.Time  = 0;
             _.Input = new Input ();
 
-            _matrix = new CharMatrix (80, 60, new Char ((char) 176, Color.Gray, Color.Black));
+            _matrix = new CharMatrix (80, 60, new Char ((char) 176, Color.DarkGray, Color.Black));
 //            _matrix.Print (1, 1, "[F1] Help", Color.White, Color.Black);
 //            _matrix.Print (1, 3, "[F2] Play", Color.White, Color.Black);
 
-            new Window (10, 10, 50, 50, Color.Blue).Open ();
-            new Window (20, 20, 50, 50, Color.DarkGreen).Open ();
-            new Window (0, 30, 20, 20, Color.DarkRed).Open ();
-            new Window (30, 0, 20, 20, Color.Black).Open ();
+//            new Window (10, 10, 50, 50).Open ();
+//            new Window (20, 20, 50, 50).Open ();
+//            new Window (0, 30, 80, 20).Open ();
+//            new Window (30, 0, 20, 20).Open ();
+            
+            new BorderedWindow (10, 10, 40, 30, "Window 1", Color.DarkBlue).Open ();
+            new BorderedWindow (30, 20, 40, 30, "Window 2", Color.DarkBlue).Open ();
         }
 
 
@@ -57,7 +60,7 @@ namespace Roguelike {
                 w.Update (ref e);
             }
 
-            _matrix = new CharMatrix (80, 60, new Char ((char) 176, Color.Gray, Color.Black));
+            _matrix = new CharMatrix (80, 60, new Char ((char) 176, Color.DarkGray, Color.Black));
             foreach (var w in _.Windows.Reverse ()) {
                 _matrix.Print (w.X, w.Y, w.Matrix);
             }
